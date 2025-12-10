@@ -1,0 +1,20 @@
+/* Dashboard CSS - Main Import File
+ * Modular CSS Architecture for Academic Management System
+ * 
+ * Structure:
+ * - base.css: Global reset, headers, navigation, container
+ * - components.css: Reusable UI (tables, buttons, badges, alerts, forms)
+ * - mahasiswa.css: Student pages (dashboard, mata kuliah, tugas)
+ * - tugas-detail.css: Assignment detail and submission pages
+ * - dosen.css: Teacher pages (dashboard, mata kuliah, tugas management)
+ * - pengumpulan.css: Submission list and grading pages
+ * - responsive.css: Mobile breakpoints
+ */
+
+@import url('base.css');
+@import url('components.css');
+@import url('mahasiswa.css');
+@import url('tugas-detail.css');
+@import url('dosen.css');
+@import url('pengumpulan.css');
+@import url('responsive.css');

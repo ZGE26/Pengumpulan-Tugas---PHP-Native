@@ -1,0 +1,117 @@
+/* Base CSS - Global Styles & Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 32px 60px 80px 60px;
+}
+
+.dashboard-container h2 {
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dashboard-container p {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+/* Header Dashboard */
+.headers {
+    padding: 24px 40px;
+    display: flex;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.content-header h1 {
+    margin: 5px 0 0 0;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.content-header p {
+    margin: 0 0 8px 0;
+    color: #e8eaf6;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.logout-button a {
+    background: #ef4444;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+    display: inline-block;
+}
+
+.logout-button a:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 18px 40px;
+    background: #ffffff;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+nav a {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+nav a:hover {
+    background: #f3f4f6;
+    color: #10b981;
+}
+
+nav a.active {
+    background-color: #10b981;
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}

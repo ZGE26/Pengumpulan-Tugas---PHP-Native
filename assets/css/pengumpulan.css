@@ -1,0 +1,512 @@
+/* Pengumpulan & Nilai CSS - Submission List and Grading Pages */
+
+/* Tugas Info Card - Header untuk halaman pengumpulan */
+.tugas-info-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.tugas-info-header {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    padding: 24px 32px;
+    color: white;
+}
+
+.tugas-info-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: white;
+}
+
+.tugas-matkul-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.tugas-matkul-name svg {
+    flex-shrink: 0;
+}
+
+.tugas-info-body {
+    padding: 24px 32px;
+    display: flex;
+    gap: 32px;
+}
+
+.tugas-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tugas-info-item svg {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.tugas-info-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tugas-info-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.tugas-info-value {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* Stats Grid untuk Pengumpulan */
+.stats-grid-pengumpulan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-card-pengumpulan {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card-pengumpulan:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon-pengumpulan {
+    font-size: 56px;
+    line-height: 1;
+}
+
+.stat-content-pengumpulan {
+    flex: 1;
+}
+
+.stat-number-pengumpulan {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 4px 0;
+    line-height: 1;
+}
+
+.stat-label-pengumpulan {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.stat-card-pengumpulan.total {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+}
+
+.stat-card-pengumpulan.submitted {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+}
+
+.stat-card-pengumpulan.graded {
+    border-left: 4px solid #3b82f6;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+}
+
+/* Pengumpulan Table Card */
+.pengumpulan-table-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pengumpulan-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+}
+
+/* Row Late - untuk highlight terlambat */
+.row-late {
+    background-color: #fef2f2 !important;
+}
+
+.row-late:hover {
+    background-color: #fee2e2 !important;
+}
+
+/* NIM Badge */
+.nim-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #f3f4f6;
+    color: #374151;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Badge Late untuk terlambat */
+.badge-late {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #fef2f2;
+    color: #991b1b;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid #fecaca;
+}
+
+/* Nilai Badge - untuk table nilai */
+.nilai-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Button Grade untuk berikan nilai */
+.btn-grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.btn-grade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-grade svg {
+    flex-shrink: 0;
+}
+
+/* Submission Detail Card - halaman pemberian nilai */
+.submission-detail-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.submission-detail-header {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    padding: 24px 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submission-detail-title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.submission-detail-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.submission-detail-title p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+}
+
+.current-grade-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+.current-grade-badge span:first-child {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.current-grade-badge span:last-child {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Student Info Grid */
+.student-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 32px;
+}
+
+.info-item-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.info-item-detail svg {
+    flex-shrink: 0;
+    color: #10b981;
+    margin-top: 2px;
+}
+
+.info-item-detail > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-item-detail .info-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.info-item-detail .info-value {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Files Section */
+.files-section {
+    padding: 0 32px 32px 32px;
+}
+
+.files-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+}
+
+.files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.file-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.file-item-detail > svg {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.file-value {
+    font-size: 15px;
+    color: #1f2937;
+    word-break: break-all;
+}
+
+.file-link {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-download svg {
+    flex-shrink: 0;
+}
+
+/* Grading Form Card */
+.grading-form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.grading-form-header {
+    padding: 20px 32px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.grading-form-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.grading-form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.grading-form .form-group {
+    margin-bottom: 0;
+}
+
+.grading-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.grading-form input[type="number"],
+.grading-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.grading-form input[type="number"]:focus,
+.grading-form textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.grading-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.grading-form input[type="number"] {
+    max-width: 150px;
+}
+
+.btn-submit-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-submit-grade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+.btn-submit-grade svg {
+    flex-shrink: 0;
+}

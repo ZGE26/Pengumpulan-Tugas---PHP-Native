@@ -1,0 +1,294 @@
+/* Responsive CSS - Mobile Breakpoints */
+
+@media (max-width: 768px) {
+    /* Base Layout */
+    .dashboard-container {
+        padding: 24px 20px;
+    }
+
+    /* Headers */
+    .headers {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px 24px;
+    }
+
+    .content-header h1 {
+        font-size: 24px;
+    }
+
+    .content-header p {
+        font-size: 13px;
+    }
+
+    /* Navigation */
+    nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    nav a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Grids to Single Column */
+    .stats-grid,
+    .matkul-grid,
+    .tugas-grid,
+    .stats-grid-pengumpulan,
+    .quick-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Stat Cards */
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-icon,
+    .stat-icon-pengumpulan {
+        font-size: 40px;
+    }
+
+    .stat-number,
+    .stat-number-pengumpulan {
+        font-size: 28px;
+    }
+
+    /* Enrollment Form */
+    .enroll-form {
+        padding: 20px;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-inline select {
+        width: 100%;
+    }
+
+    .btn-enroll {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Mata Kuliah Cards */
+    .matkul-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .matkul-card {
+        min-height: auto;
+    }
+
+    /* Tugas Cards */
+    .tugas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Detail Page */
+    .detail-card-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .detail-title-section h2 {
+        font-size: 22px;
+    }
+
+    .detail-card-body {
+        padding: 24px 20px;
+    }
+
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Submission Form */
+    .submission-form-card {
+        padding: 24px 20px;
+    }
+
+    /* Edit Submission */
+    .info-grid-edit {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .current-submission-card,
+    .edit-form-card {
+        padding: 24px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Quick Menu Cards */
+    .quick-menu-card {
+        padding: 20px;
+    }
+
+    /* Account Info Card */
+    .account-info-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 24px;
+    }
+
+    .avatar-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .account-details {
+        width: 100%;
+    }
+
+    /* Page Header */
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .page-header h2 {
+        font-size: 22px;
+    }
+
+    .btn-add-new {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Tables */
+    .matkul-table-card,
+    .tugas-table-card,
+    .pengumpulan-table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    table th,
+    table td {
+        padding: 12px 16px;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .btn-edit,
+    .btn-delete,
+    .btn-view,
+    .btn-grade {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Tugas Info Card */
+    .tugas-info-header {
+        padding: 20px 24px;
+    }
+
+    .tugas-info-header h2 {
+        font-size: 20px;
+    }
+
+    .tugas-info-body {
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 20px;
+    }
+
+    /* Student Info Grid */
+    .student-info-grid {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    /* Files Section */
+    .files-section {
+        padding: 0 20px 24px 20px;
+    }
+
+    .file-item-detail {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Submission Detail Card */
+    .submission-detail-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 24px;
+        gap: 16px;
+    }
+
+    .submission-detail-title h2 {
+        font-size: 20px;
+    }
+
+    .current-grade-badge {
+        justify-content: center;
+    }
+
+    /* Grading Form */
+    .grading-form {
+        padding: 24px 20px;
+    }
+
+    .grading-form input[type="number"] {
+        max-width: 100%;
+    }
+
+    .btn-submit-grade {
+        width: 100%;
+    }
+
+    /* Edit Tugas Card */
+    .edit-tugas-header {
+        padding: 20px 24px;
+    }
+
+    .edit-tugas-header h2 {
+        font-size: 20px;
+    }
+
+    .edit-tugas-card form {
+        padding: 24px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

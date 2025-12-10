@@ -1,0 +1,356 @@
+/* Dosen Pages CSS - Dashboard, Mata Kuliah, Tugas Management */
+
+/* Quick Menu Grid - Dashboard Dosen */
+.quick-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.quick-menu-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.quick-menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: #10b981;
+}
+
+.quick-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.quick-content {
+    flex: 1;
+}
+
+.quick-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 4px 0;
+}
+
+.quick-content p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.quick-menu-card svg {
+    flex-shrink: 0;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.quick-menu-card:hover svg {
+    color: #10b981;
+    transform: translateX(4px);
+}
+
+/* Account Info Card - Dashboard Dosen */
+.account-info-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.account-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.account-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.account-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.account-item svg {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.account-item > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.account-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.account-value {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* Page Header with Button */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.btn-add-new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-add-new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Mata Kuliah Table Card */
+.matkul-table-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.matkul-table-card table {
+    margin: 0;
+    border: none;
+}
+
+.kode-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #eff6ff;
+    color: #1e40af;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Action Buttons in Table */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-edit,
+.btn-delete {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-edit {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.btn-edit:hover {
+    background: #bfdbfe;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.btn-delete:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+}
+
+/* Tugas Table Card - untuk table tugas dosen */
+.tugas-table-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tugas-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+}
+
+/* Button View - untuk lihat pengumpulan */
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #dbeafe;
+    color: #1e40af;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-view:hover {
+    background: #bfdbfe;
+    transform: translateY(-1px);
+}
+
+.btn-view svg {
+    flex-shrink: 0;
+}
+
+/* Edit Tugas Card */
+.edit-tugas-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.edit-tugas-header {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    padding: 24px 32px;
+    color: white;
+}
+
+.edit-tugas-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: white;
+}
+
+.edit-tugas-header p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+}
+
+.edit-tugas-card form {
+    padding: 32px;
+}
+
+.edit-tugas-card .form-group {
+    margin-bottom: 24px;
+}
+
+.edit-tugas-card .form-group:last-of-type {
+    margin-bottom: 32px;
+}
+
+.edit-tugas-card label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.edit-tugas-card input[type="text"],
+.edit-tugas-card input[type="number"],
+.edit-tugas-card input[type="datetime-local"],
+.edit-tugas-card select,
+.edit-tugas-card textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.edit-tugas-card input:focus,
+.edit-tugas-card select:focus,
+.edit-tugas-card textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.edit-tugas-card textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}

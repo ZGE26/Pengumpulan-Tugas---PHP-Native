@@ -1,0 +1,465 @@
+/* Tugas Detail & Submission CSS */
+
+/* Detail Card - Assignment Detail Page */
+.detail-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card-header {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.detail-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.detail-title-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: white;
+}
+
+.detail-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.detail-card-body {
+    padding: 32px;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.text-danger {
+    color: #ef4444 !important;
+}
+
+.detail-description {
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.detail-description h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.detail-description p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+/* Submission Status Card */
+.submission-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.submission-header {
+    background: #f9fafb;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.submission-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.grade-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+}
+
+.grade-label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.grade-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.submission-body {
+    padding: 32px;
+}
+
+.submission-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.submission-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.submission-item svg {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.submission-item > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.submission-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.submission-value {
+    font-size: 15px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.warning-text {
+    display: block;
+    font-size: 13px;
+    color: #f59e0b;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.file-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+.feedback-section {
+    padding: 20px;
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 8px;
+}
+
+.feedback-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e40af;
+    margin: 0 0 12px 0;
+}
+
+.feedback-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Submission Form Card */
+.submission-form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.submission-form-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 24px 0;
+}
+
+.submission-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.submission-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.submission-form .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.submission-form .form-group input[type="file"],
+.submission-form .form-group input[type="url"] {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.submission-form .form-group input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.submission-form .form-group small {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.btn-submit-form {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Edit Info Card */
+.edit-info-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.edit-info-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+}
+
+.info-grid-edit {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-text {
+    font-size: 15px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* Current Submission Card */
+.current-submission-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.current-submission-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+}
+
+.current-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.current-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.current-item svg {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.current-item > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.current-label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.current-value {
+    font-size: 15px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* Edit Form Card */
+.edit-form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.edit-form-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 24px 0;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.edit-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-form .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.edit-form .form-group input[type="file"],
+.edit-form .form-group input[type="url"] {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.edit-form .form-group input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.edit-form .form-group small {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.btn-update {
+    flex: 1;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
