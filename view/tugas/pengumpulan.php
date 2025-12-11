@@ -70,7 +70,15 @@ $is_expired = $deadline < $now;
     <div class="headers">
         <div class="content-header">
             <p>Dosen - Pengumpulan Tugas</p>
-            <h1>📋 <?= htmlspecialchars($tugas['judul_tugas']) ?></h1>
+            <h1>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path>
+                    <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+                    <path d="M9 12h6"></path>
+                    <path d="M9 16h6"></path>
+                </svg>
+                <?= htmlspecialchars($tugas['judul_tugas']) ?>
+            </h1>
         </div>
         <div class="logout-button">
             <a href="/logout">Logout</a>
@@ -137,7 +145,7 @@ $is_expired = $deadline < $now;
     <!-- Statistik Cards -->
     <div class="stats-grid-pengumpulan">
         <div class="stat-card-pengumpulan">
-            <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="stat-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>

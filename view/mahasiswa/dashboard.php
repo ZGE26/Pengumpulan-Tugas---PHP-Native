@@ -87,7 +87,7 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
         
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-icon">📋</div>
+                <!-- <div class="stat-icon">📋</div> -->
                 <div class="stat-info">
                     <div class="stat-number"><?= $total_belum_dikumpulkan ?></div>
                     <div class="stat-label">Total Belum Dikumpulkan</div>
@@ -95,7 +95,7 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
             </div>
             
             <div class="stat-card urgent">
-                <div class="stat-icon">⚡</div>
+                <!-- <div class="stat-icon">⚡</div> -->
                 <div class="stat-info">
                     <div class="stat-number"><?= $tugas_mendesak ?></div>
                     <div class="stat-label">Tugas Mendesak (< 24 jam)</div>
@@ -103,7 +103,7 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
             </div>
             
             <div class="stat-card expired">
-                <div class="stat-icon">⚠️</div>
+                <!-- <div class="stat-icon">⚠️</div> -->
                 <div class="stat-info">
                     <div class="stat-number"><?= $tugas_expired ?></div>
                     <div class="stat-label">Tugas Terlambat</div>

@@ -43,6 +43,7 @@
 
 .tugas-info-item {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 12px;
 }
@@ -98,6 +99,22 @@
 .stat-icon-pengumpulan {
     font-size: 56px;
     line-height: 1;
+    padding: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    color: white;
+    flex-shrink: 0;
 }
 
 .stat-content-pengumpulan {
@@ -184,19 +201,17 @@
     border: 1px solid #fecaca;
 }
 
-/* Nilai Badge - untuk table nilai */
+/* Nilai Badge - plain text for table */
 .nilai-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
-    font-size: 18px;
+    display: inline-block;
+    color: #10b981;
+    font-size: 16px;
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.nilai-badge.nilai-empty {
+    color: #9ca3af;
+    font-weight: 600;
 }
 
 /* Button Grade untuk berikan nilai */
@@ -245,6 +260,25 @@
     justify-content: space-between;
 }
 
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.header-left h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.submission-meta {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+}
+
 .submission-detail-title {
     display: flex;
     flex-direction: column;
@@ -286,12 +320,45 @@
     font-weight: 700;
 }
 
+.grade-label {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.grade-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Submission Detail Body */
+.submission-detail-body {
+    padding: 32px;
+}
+
+.student-info-section,
+.submission-files-section {
+    margin-bottom: 32px;
+}
+
+.student-info-section:last-child,
+.submission-files-section:last-child {
+    margin-bottom: 0;
+}
+
+.student-info-section h3,
+.submission-files-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+}
+
 /* Student Info Grid */
 .student-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
-    padding: 32px;
 }
 
 .info-item-detail {
@@ -316,10 +383,21 @@
     gap: 6px;
 }
 
-.info-item-detail .info-label {
+.info-item-detail .info-label,
+.info-label-detail {
     font-size: 13px;
     color: #6b7280;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-item-detail .info-value,
+.info-value-detail {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 .info-item-detail .info-value {
@@ -418,6 +496,7 @@
 
 /* Grading Form Card */
 .grading-form-card {
+    padding: 20px 32px;
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 12px;

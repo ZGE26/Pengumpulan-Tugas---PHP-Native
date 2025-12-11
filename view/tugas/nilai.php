@@ -49,7 +49,13 @@ $pengumpulan = $result->fetch_assoc();
     <div class="headers">
         <div class="content-header">
             <p>Dosen - Penilaian Tugas</p>
-            <h1>📝 Beri Nilai</h1>
+            <h1>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+                Beri Nilai
+            </h1>
         </div>
         <div class="logout-button">
             <a href="/logout">Logout</a>
@@ -63,8 +69,6 @@ $pengumpulan = $result->fetch_assoc();
         <a href="/tugas/pengumpulan?id=<?= $pengumpulan['id_tugas'] ?>">Kembali</a>
     </nav>
     
-    <div class="dashboard-container">
-
     <div class="dashboard-container">
     <?php
     if (isset($_SESSION['error'])) {
@@ -83,15 +87,22 @@ $pengumpulan = $result->fetch_assoc();
     
     if ($terlambat):
     ?>
-        <div class="alert-warning">
-            <h3>⚠️ PERHATIAN: Pengumpulan Terlambat</h3>
-            <p style="margin: 8px 0;">
-                <strong>Deadline:</strong> <?= date('d F Y, H:i', $deadline_time) ?><br>
-                <strong>Dikumpulkan:</strong> <?= date('d F Y, H:i', $kumpul_time) ?>
-            </p>
-            <p style="margin: 8px 0 0 0;">
-                <strong>Nilai akan otomatis dikurangi 10 poin saat disimpan.</strong>
-            </p>
+        <div class="alert alert-warning">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <div>
+                <h3>PERHATIAN: Pengumpulan Terlambat</h3>
+                <p style="margin: 8px 0;">
+                    <strong>Deadline:</strong> <?= date('d F Y, H:i', $deadline_time) ?><br>
+                    <strong>Dikumpulkan:</strong> <?= date('d F Y, H:i', $kumpul_time) ?>
+                </p>
+                <p style="margin: 8px 0 0 0;">
+                    <strong>Nilai akan otomatis dikurangi 10 poin saat disimpan.</strong>
+                </p>
+            </div>
         </div>
     <?php endif; ?>
 
@@ -250,6 +261,6 @@ $pengumpulan = $result->fetch_assoc();
             </div>
         </form>
     </div>
-    </div>
+</div>
 </body>
 </html>
