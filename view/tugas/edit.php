@@ -43,7 +43,7 @@ $tugas = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Tugas - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -52,14 +52,14 @@ $tugas = $result->fetch_assoc();
             <h1>✏️ Edit Tugas</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
     </nav>
     
     <div class="dashboard-container">
@@ -83,7 +83,7 @@ $tugas = $result->fetch_assoc();
             <p>Perbarui informasi tugas yang sudah dibuat</p>
         </div>
 
-        <form action="/proses/tugas/update.php" method="POST">
+        <form action="/project/proses/tugas/update.php" method="POST">
             <input type="hidden" name="id_tugas" value="<?= $id_tugas ?>">
             
             <div class="form-group">
@@ -145,7 +145,7 @@ $tugas = $result->fetch_assoc();
                     </svg>
                     Update Tugas
                 </button>
-                <a href="/tugas" class="btn-cancel">Batal</a>
+                <a href="/project/tugas" class="btn-cancel">Batal</a>
             </div>
         </form>
     </div>

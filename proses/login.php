@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate input
     if (empty($username) || empty($password)) {
         $_SESSION['error'] = "Username dan password harus diisi!";
-        header('Location: ../login.php');
+        header('Location: /project/login');
         exit();
     }
     
@@ -45,32 +45,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Redirect based on role
             if ($user['role_id'] == 1) {
                 // Dosen
-                header('Location: /dashboard');
+                header('Location: /project/dashboard');
             } else if ($user['role_id'] == 2) {
                 // Mahasiswa
-                header('Location: /dashboard');
+                header('Location: /project/dashboard');
             } else {
                 // Default redirect jika role tidak dikenali
                 $_SESSION['error'] = "Role tidak valid!";
-                header('Location: /login');
+                header('Location: /project/login');
             }
             exit();
         } else {
             // Password is incorrect
             $_SESSION['error'] = "Username atau password salah!";
-            header('Location: /login');
+            header('Location: /project/login');
             exit();
         }
     } else {
         // User not found
         $_SESSION['error'] = "Username atau password salah!";
-        header('Location: /login');
+        header('Location: /project/login');
         exit();
     }
     
 } else {
     // If not POST request, redirect to login page
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 ?>

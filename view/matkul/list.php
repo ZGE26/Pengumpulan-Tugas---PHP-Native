@@ -23,7 +23,7 @@ if (isset($_GET['id_matkul'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mata Kuliah - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 
 <body>
@@ -33,13 +33,13 @@ if (isset($_GET['id_matkul'])) {
             <h1>📚 Mata Kuliah Saya</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/matakuliah">Mata Kuliah</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/matakuliah">Mata Kuliah</a>
     </nav>
     
     <div class="dashboard-container">
@@ -59,7 +59,7 @@ if (isset($_GET['id_matkul'])) {
         }
         ?>
         
-        <form action="/proses/enrollement/store.php" method="POST" class="enroll-form">
+        <form action="/project/proses/enrollement/store.php" method="POST" class="enroll-form">
             <div class="form-inline">
                 <select name="id_matkul" id="id_matkul" required>
                     <option value="">-- Pilih Mata Kuliah --</option>
@@ -87,7 +87,7 @@ if (isset($_GET['id_matkul'])) {
         <?php if (!empty($enrollments)): ?>
             <div class="matkul-grid">
                 <?php foreach ($enrollments as $enrollment): ?>
-                    <a href="/matakuliah?id_matkul=<?= $enrollment['id_matkul'] ?>" class="matkul-card">
+                    <a href="/project/matakuliah?id_matkul=<?= $enrollment['id_matkul'] ?>" class="matkul-card">
                         <div class="matkul-card-header">
                             <span class="matkul-badge"><?= htmlspecialchars($enrollment['kode_matkul']) ?></span>
                         </div>

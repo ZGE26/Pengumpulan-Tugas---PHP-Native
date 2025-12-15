@@ -57,7 +57,7 @@ $is_late = strtotime($pengumpulan['tanggal_kumpul']) > $deadline;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Pengumpulan - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -66,14 +66,14 @@ $is_late = strtotime($pengumpulan['tanggal_kumpul']) > $deadline;
             <h1>✏️ Edit Pengumpulan Tugas</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/tugas">Tugas</a>
-        <a href="/tugas/detail?id=<?= $pengumpulan['id_tugas'] ?>">Kembali</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/tugas">Tugas</a>
+        <a href="/project/tugas/detail?id=<?= $pengumpulan['id_tugas'] ?>">Kembali</a>
     </nav>
     
     <div class="dashboard-container">
@@ -146,7 +146,7 @@ $is_late = strtotime($pengumpulan['tanggal_kumpul']) > $deadline;
                 </svg>
                 <div>
                     <span class="current-label">File</span>
-                    <a href="/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
+                    <a href="/project/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
                         <?= htmlspecialchars($pengumpulan['nama_file']) ?>
                     </a>
                 </div>
@@ -174,7 +174,7 @@ $is_late = strtotime($pengumpulan['tanggal_kumpul']) > $deadline;
     <div class="edit-form-card">
         <h3>Edit Pengumpulan</h3>
         
-        <form action="/proses/pengumpulan/update.php" method="POST" enctype="multipart/form-data" class="edit-form">
+        <form action="/project/proses/pengumpulan/update.php" method="POST" enctype="multipart/form-data" class="edit-form">
             <input type="hidden" name="id_pengumpulan" value="<?= $pengumpulan['id_pengumpulan'] ?>">
             <input type="hidden" name="id_tugas" value="<?= $pengumpulan['id_tugas'] ?>">
 
@@ -206,7 +206,7 @@ $is_late = strtotime($pengumpulan['tanggal_kumpul']) > $deadline;
 
             <div class="form-actions">
                 <button type="submit" class="btn-update">Update Pengumpulan</button>
-                <a href="/tugas/detail?id=<?= $pengumpulan['id_tugas'] ?>" class="btn-cancel">Batal</a>
+                <a href="/project/tugas/detail?id=<?= $pengumpulan['id_tugas'] ?>" class="btn-cancel">Batal</a>
             </div>
         </form>
     </div>

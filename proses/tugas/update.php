@@ -3,12 +3,12 @@ session_start();
 require_once '../../config/db.php';
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -23,13 +23,13 @@ $id_dosen = $_SESSION['user_id'];
 // Validasi input
 if (empty($judul_tugas) || empty($deskripsi_tugas) || empty($deadline)) {
     $_SESSION['error'] = 'Semua field harus diisi!';
-    header('Location: /tugas/edit?id=' . $id_tugas);
+    header('Location: /project/tugas/edit?id=' . $id_tugas);
     exit();
 }
 
 if ($bobot_nilai < 0 || $bobot_nilai > 100) {
     $_SESSION['error'] = 'Bobot nilai harus antara 0-100!';
-    header('Location: /tugas/edit?id=' . $id_tugas);
+    header('Location: /project/tugas/edit?id=' . $id_tugas);
     exit();
 }
 
@@ -46,7 +46,7 @@ $check_result = $check_stmt->get_result();
 
 if ($check_result->num_rows == 0) {
     $_SESSION['error'] = 'Tugas tidak ditemukan atau bukan milik Anda!';
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -65,6 +65,6 @@ if ($update_stmt->execute()) {
     $_SESSION['error'] = 'Gagal mengupdate tugas!';
 }
 
-header('Location: /tugas');
+header('Location: /project/tugas');
 exit();
 ?>

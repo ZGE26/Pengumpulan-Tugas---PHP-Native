@@ -43,7 +43,7 @@ $pengumpulan = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beri Nilai - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -58,15 +58,15 @@ $pengumpulan = $result->fetch_assoc();
             </h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
-        <a href="/tugas/pengumpulan?id=<?= $pengumpulan['id_tugas'] ?>">Kembali</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
+        <a href="/project/tugas/pengumpulan?id=<?= $pengumpulan['id_tugas'] ?>">Kembali</a>
     </nav>
     
     <div class="dashboard-container">
@@ -178,11 +178,11 @@ $pengumpulan = $result->fetch_assoc();
                             <polyline points="13 2 13 9 20 9"></polyline>
                         </svg>
                         <div class="file-info">
-                            <a href="/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
+                            <a href="/project/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
                                 <?= htmlspecialchars($pengumpulan['nama_file']) ?>
                             </a>
                         </div>
-                        <a href="/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="btn-download">
+                        <a href="/project/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="btn-download">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -221,7 +221,7 @@ $pengumpulan = $result->fetch_assoc();
     <!-- Grading Form Card -->
     <div class="grading-form-card">
         <h2>Form Penilaian</h2>
-        <form action="/proses/pengumpulan/nilai.php" method="POST">
+        <form action="/project/proses/pengumpulan/nilai.php" method="POST">
             <input type="hidden" name="id_pengumpulan" value="<?= $id_pengumpulan ?>">
             <input type="hidden" name="id_tugas" value="<?= $pengumpulan['id_tugas'] ?>">
             
@@ -257,7 +257,7 @@ $pengumpulan = $result->fetch_assoc();
                     </svg>
                     Simpan Nilai
                 </button>
-                <a href="/tugas/pengumpulan?id=<?= $pengumpulan['id_tugas'] ?>" class="btn-cancel">Batal</a>
+                <a href="/project/tugas/pengumpulan?id=<?= $pengumpulan['id_tugas'] ?>" class="btn-cancel">Batal</a>
             </div>
         </form>
     </div>

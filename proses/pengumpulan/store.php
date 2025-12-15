@@ -3,12 +3,12 @@ session_start();
 require_once '../../config/db.php';
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 2) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -25,21 +25,21 @@ $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
     $_SESSION['error'] = 'Tugas tidak ditemukan!';
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
 $tugas = $result->fetch_assoc();
 if (strtotime($tugas['deadline']) < time()) {
     $_SESSION['error'] = 'Deadline tugas sudah lewat!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
 // Validasi file upload
 if (!isset($_FILES['file']) || $_FILES['file']['error'] !== UPLOAD_ERR_OK) {
     $_SESSION['error'] = 'File harus diupload!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -51,13 +51,13 @@ $file_extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
 
 if (!in_array($file_extension, $allowed_extensions)) {
     $_SESSION['error'] = 'Format file tidak diizinkan! Gunakan: PDF, DOC, DOCX, ZIP, RAR';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
 if ($file['size'] > $max_size) {
     $_SESSION['error'] = 'Ukuran file terlalu besar! Maksimal 10MB';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -68,7 +68,7 @@ $upload_path = '../../public/uploads/' . $new_filename;
 // Upload file
 if (!move_uploaded_file($file['tmp_name'], $upload_path)) {
     $_SESSION['error'] = 'Gagal mengupload file!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -113,6 +113,6 @@ if ($check_result->num_rows > 0) {
     }
 }
 
-header('Location: /tugas/detail?id=' . $id_tugas);
+header('Location: /project/tugas/detail?id=' . $id_tugas);
 exit();
 ?>

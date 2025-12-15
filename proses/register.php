@@ -5,7 +5,7 @@ require_once '../config/db.php';
 // Cek apakah form sudah disubmit
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = 'Metode request tidak valid';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
@@ -21,42 +21,42 @@ $confirm_password = $_POST['confirm_password'] ?? '';
 // Validasi input
 if (empty($role_id) || empty($nama_lengkap) || empty($nomor_induk) || empty($email) || empty($user_name) || empty($password) || empty($confirm_password)) {
     $_SESSION['error'] = 'Semua field harus diisi';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
 // Validasi role
 if (!in_array($role_id, ['1', '2'])) {
     $_SESSION['error'] = 'Role tidak valid';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
 // Validasi username minimal 4 karakter
 if (strlen($user_name) < 4) {
     $_SESSION['error'] = 'Username minimal 4 karakter';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
 // Validasi password minimal 6 karakter
 if (strlen($password) < 6) {
     $_SESSION['error'] = 'Password minimal 6 karakter';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
 // Validasi konfirmasi password
 if ($password !== $confirm_password) {
     $_SESSION['error'] = 'Password dan konfirmasi password tidak sama';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
 // Validasi email format
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['error'] = 'Format email tidak valid';
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 
@@ -69,7 +69,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $_SESSION['error'] = 'Username sudah digunakan';
     $stmt->close();
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 $stmt->close();
@@ -83,7 +83,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $_SESSION['error'] = 'Nomor Induk sudah terdaftar';
     $stmt->close();
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 $stmt->close();
@@ -97,7 +97,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $_SESSION['error'] = 'Email sudah terdaftar';
     $stmt->close();
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }
 $stmt->close();
@@ -112,11 +112,11 @@ $stmt->bind_param("isssss", $role_id, $user_name, $nama_lengkap, $nomor_induk, $
 if ($stmt->execute()) {
     $_SESSION['success'] = 'Registrasi berhasil! Silakan login dengan akun Anda.';
     $stmt->close();
-    header('Location: /login.php');
+    header('Location: /project/login');
     exit;
 } else {
     $_SESSION['error'] = 'Terjadi kesalahan saat registrasi: ' . $conn->error;
     $stmt->close();
-    header('Location: /register.php');
+    header('Location: /project/register');
     exit;
 }

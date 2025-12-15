@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
     header('Location: ../../login.php');
     exit();
@@ -12,7 +11,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Dosen - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -21,14 +20,14 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
             <h1>Dashboard Dosen</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
     </nav>
 
     <div class="dashboard-container">
@@ -36,7 +35,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
     <h2>Menu Cepat</h2>
     
     <div class="quick-menu-grid">
-        <a href="/mata-kuliah" class="quick-menu-card">
+        <a href="/project/mata-kuliah" class="quick-menu-card">
             <div class="quick-icon">📚</div>
             <div class="quick-content">
                 <h3>Kelola Mata Kuliah</h3>
@@ -47,7 +46,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
             </svg>
         </a>
         
-        <a href="/tugas" class="quick-menu-card">
+        <a href="/project/tugas" class="quick-menu-card">
             <div class="quick-icon">📝</div>
             <div class="quick-content">
                 <h3>Kelola Tugas</h3>

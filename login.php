@@ -4,7 +4,7 @@ if (!defined('DB_HOST')) {
     require_once 'config/db.php';
 }
 
-session_start();
+// session_start() sudah dipanggil di index.php
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/project/assets/css/auth.css">
 </head>
 <body>
     <div class="auth-container">
@@ -36,7 +36,7 @@ session_start();
         }
         ?>
         
-        <form action="proses/login.php" method="POST" class="auth-form">
+        <form action="/project/proses/login.php" method="POST" class="auth-form">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Masukkan username Anda" required>
@@ -51,7 +51,7 @@ session_start();
         </form>
         
         <div class="auth-footer">
-            <p>Belum punya akun? <a href="register.php">Daftar di sini</a></p>
+            <p>Belum punya akun? <a href="/project/register">Daftar di sini</a></p>
         </div>
     </div>
 </body>

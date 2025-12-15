@@ -5,14 +5,14 @@ session_start();
 
 // Cek login dan role
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 // Cek parameter id
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     $_SESSION['error'] = "ID Tugas tidak valid.";
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -30,7 +30,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
     $_SESSION['error'] = "Tugas tidak ditemukan.";
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -39,7 +39,7 @@ $tugas = $result->fetch_assoc();
 // Verifikasi bahwa dosen yang login adalah pemilik tugas
 if ($tugas['id_dosen'] != $_SESSION['user_id']) {
     $_SESSION['error'] = "Anda tidak memiliki akses untuk menghapus tugas ini.";
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -84,6 +84,6 @@ if ($stmt->execute()) {
     $_SESSION['error'] = "Gagal menghapus tugas.";
 }
 
-header('Location: /tugas');
+header('Location: /project/tugas');
 exit();
 ?>

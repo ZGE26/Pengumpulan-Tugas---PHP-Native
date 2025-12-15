@@ -63,7 +63,7 @@ $is_expired = $deadline < $now;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengumpulan Tugas - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 
 <body>
@@ -81,15 +81,15 @@ $is_expired = $deadline < $now;
             </h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
-        <a href="/tugas">Kembali</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
+        <a href="/project/tugas">Kembali</a>
     </nav>
     
     <div class="dashboard-container">
@@ -225,7 +225,7 @@ $is_expired = $deadline < $now;
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="/public/uploads/<?= htmlspecialchars($p['nama_file']) ?>" target="_blank" class="file-link">
+                                <a href="/project/public/uploads/<?= htmlspecialchars($p['nama_file']) ?>" target="_blank" class="file-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -255,7 +255,7 @@ $is_expired = $deadline < $now;
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="/tugas/nilai?id=<?= $p['id_pengumpulan'] ?>" class="btn-grade">
+                                <a href="/project/tugas/nilai?id=<?= $p['id_pengumpulan'] ?>" class="btn-grade">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>

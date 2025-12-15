@@ -5,7 +5,7 @@ require_once 'query.php';
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,20 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result) {
             $_SESSION['success'] = "Tugas berhasil dibuat.";
-            header('Location: /tugas');
+            header('Location: /project/tugas');
             exit();
         } else {
             $_SESSION['error'] = "Gagal membuat tugas.";
-            header('Location: /tugas');
+            header('Location: /project/tugas');
             exit();
         }
     } else {
         $_SESSION['error'] = "Data tidak lengkap.";
-        header('Location: /tugas');
+        header('Location: /project/tugas');
         exit();
     }
 } else {
     $_SESSION['error'] = "Metode permintaan tidak valid.";
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }

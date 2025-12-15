@@ -5,7 +5,7 @@
 require_once 'proses/enrollement/query.php';
 
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 

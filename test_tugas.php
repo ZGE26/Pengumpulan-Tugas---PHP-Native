@@ -96,6 +96,6 @@ if (isset($_SESSION['selected_matkul'])) {
 }
 
 echo "<hr>";
-echo "<a href='/matakuliah'>← Kembali ke Matakuliah</a> ";
-echo "<a href='/tugas'>Lihat Halaman Tugas</a>";
+echo "<a href='/project/matakuliah'>← Kembali ke Matakuliah</a> ";
+echo "<a href='/project/tugas'>Lihat Halaman Tugas</a>";
 ?>

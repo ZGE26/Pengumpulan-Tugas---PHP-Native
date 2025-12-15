@@ -5,14 +5,14 @@ session_start();
 
 // Cek login dan role
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 // Cek parameter id
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     $_SESSION['error'] = "ID Mata Kuliah tidak valid.";
-    header('Location: /mata-kuliah');
+    header('Location: /project/mata-kuliah');
     exit();
 }
 
@@ -28,7 +28,7 @@ $row = $result->fetch_assoc();
 
 if ($row['total'] > 0) {
     $_SESSION['error'] = "Tidak dapat menghapus mata kuliah. Masih ada " . $row['total'] . " tugas yang terkait.";
-    header('Location: /mata-kuliah');
+    header('Location: /project/mata-kuliah');
     exit();
 }
 
@@ -42,7 +42,7 @@ $row = $result->fetch_assoc();
 
 if ($row['total'] > 0) {
     $_SESSION['error'] = "Tidak dapat menghapus mata kuliah. Masih ada " . $row['total'] . " mahasiswa yang terdaftar.";
-    header('Location: /mata-kuliah');
+    header('Location: /project/mata-kuliah');
     exit();
 }
 
@@ -57,6 +57,6 @@ if ($stmt->execute()) {
     $_SESSION['error'] = "Gagal menghapus mata kuliah.";
 }
 
-header('Location: /mata-kuliah');
+header('Location: /project/mata-kuliah');
 exit();
 ?>

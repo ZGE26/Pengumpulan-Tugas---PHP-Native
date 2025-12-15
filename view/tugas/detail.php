@@ -55,7 +55,7 @@ $is_expired = $deadline < $now;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Tugas - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -64,16 +64,16 @@ $is_expired = $deadline < $now;
             <h1><?= htmlspecialchars($tugas['judul_tugas']) ?></h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/matakuliah">Mata Kuliah</a>
-        <a href="/tugas">Kembali</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/matakuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Kembali</a>
         <?php if ($pengumpulan && $pengumpulan['nilai'] === null): ?>
-            <a href="/tugas/edit-pengumpulan?id=<?= $pengumpulan['id_pengumpulan'] ?>">✏️ Edit Pengumpulan</a>
+            <a href="/project/tugas/edit-pengumpulan?id=<?= $pengumpulan['id_pengumpulan'] ?>">✏️ Edit Pengumpulan</a>
         <?php endif; ?>
     </nav>
     
@@ -171,7 +171,7 @@ $is_expired = $deadline < $now;
                         </svg>
                         <div>
                             <span class="submission-label">File</span>
-                            <a href="/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
+                            <a href="/project/public/uploads/<?= htmlspecialchars($pengumpulan['nama_file']) ?>" target="_blank" class="file-link">
                                 <?= htmlspecialchars($pengumpulan['nama_file']) ?>
                             </a>
                         </div>
@@ -212,7 +212,7 @@ $is_expired = $deadline < $now;
                     <strong>Maaf, deadline tugas sudah lewat!</strong>
                 </div>
             <?php else: ?>
-                <form action="/proses/pengumpulan/store.php" method="POST" enctype="multipart/form-data" class="submission-form">
+                <form action="/project/proses/pengumpulan/store.php" method="POST" enctype="multipart/form-data" class="submission-form">
                     <input type="hidden" name="id_tugas" value="<?= $id_tugas ?>">
                     
                     <div class="form-group">

@@ -6,7 +6,7 @@ session_start();
 
 // Cek login dan role
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
@@ -21,21 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result) {
             $_SESSION['success'] = "Mata kuliah berhasil diupdate.";
-            header('Location: /mata-kuliah');
+            header('Location: /project/mata-kuliah');
             exit();
         } else {
             $_SESSION['error'] = "Gagal mengupdate mata kuliah.";
-            header('Location: /mata-kuliah/edit?id=' . $id_matkul);
+            header('Location: /project/mata-kuliah/edit?id=' . $id_matkul);
             exit();
         }
     } else {
         $_SESSION['error'] = "Data tidak lengkap.";
-        header('Location: /mata-kuliah');
+        header('Location: /project/mata-kuliah');
         exit();
     }
 } else {
     $_SESSION['error'] = "Metode permintaan tidak valid.";
-    header('Location: /mata-kuliah');
+    header('Location: /project/mata-kuliah');
     exit();
 }
 ?>

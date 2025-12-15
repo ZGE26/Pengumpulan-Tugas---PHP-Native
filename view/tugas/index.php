@@ -79,9 +79,9 @@ if ($_SESSION['role_id'] == 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Tugas - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
     <?php if ($_SESSION['role_id'] == 1): ?>
-        <link rel="stylesheet" href="/assets/css/modal.css">
+        <link rel="stylesheet" href="/project/assets/css/modal.css">
     <?php endif; ?>
 </head>
 
@@ -97,21 +97,21 @@ if ($_SESSION['role_id'] == 1) {
             <?php endif; ?>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
     
     <nav>
         <?php if ($_SESSION['role_id'] == 1): ?>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/mata-kuliah">Mata Kuliah</a>
-            <a href="/tugas">Tugas</a>
+            <a href="/project/dashboard">Dashboard</a>
+            <a href="/project/mata-kuliah">Mata Kuliah</a>
+            <a href="/project/tugas">Tugas</a>
         <?php else: ?>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/matakuliah">Mata Kuliah</a>
-            <a href="/tugas">Tugas</a>
+            <a href="/project/dashboard">Dashboard</a>
+            <a href="/project/matakuliah">Mata Kuliah</a>
+            <a href="/project/tugas">Tugas</a>
             <?php if (isset($selected_course)): ?>
-                <a href="/matakuliah">🔄 Ganti MK</a>
+                <a href="/project/matakuliah">🔄 Ganti MK</a>
             <?php endif; ?>
         <?php endif; ?>
     </nav>
@@ -210,7 +210,7 @@ if ($_SESSION['role_id'] == 1) {
                         </div>
                         
                         <div class="tugas-card-footer">
-                            <a href="/tugas/detail?id=<?= $tugas['id_tugas'] ?>" class="btn-submit-tugas">
+                            <a href="/project/tugas/detail?id=<?= $tugas['id_tugas'] ?>" class="btn-submit-tugas">
                                 <?php if ($is_submitted): ?>
                                     Lihat Detail
                                 <?php else: ?>
@@ -267,21 +267,21 @@ if ($_SESSION['role_id'] == 1) {
                                 </td>
                                 <td>
                                     <div class="action-buttons">
-                                        <a href="/tugas/pengumpulan?id=<?= $tugas['id_tugas'] ?>" class="btn-view">
+                                        <a href="/project/tugas/pengumpulan?id=<?= $tugas['id_tugas'] ?>" class="btn-view">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                 <path d="M9 11l3 3L22 4"></path>
                                                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
                                             </svg>
                                             Pengumpulan
                                         </a>
-                                        <a href="/tugas/edit?id=<?= $tugas['id_tugas'] ?>" class="btn-edit">
+                                        <a href="/project/tugas/edit?id=<?= $tugas['id_tugas'] ?>" class="btn-edit">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                             </svg>
                                             Edit
                                         </a>
-                                        <a href="/proses/tugas/delete.php?id=<?= $tugas['id_tugas'] ?>" class="btn-delete"
+                                        <a href="/project/proses/tugas/delete.php?id=<?= $tugas['id_tugas'] ?>" class="btn-delete"
                                             onclick="return confirm('Yakin ingin menghapus tugas ini?\n\nPeringatan: Semua pengumpulan mahasiswa akan ikut terhapus!')">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                 <polyline points="3 6 5 6 21 6"></polyline>
@@ -319,7 +319,7 @@ if ($_SESSION['role_id'] == 1) {
                     <h2>Buat Tugas Baru</h2>
                     <span class="close" onclick="closeModal()">&times;</span>
                 </div>
-                <form action="/proses/tugas/store.php" method="POST">
+                <form action="/project/proses/tugas/store.php" method="POST">
                     <div class="form-group">
                         <label for="id_matkul">Mata Kuliah *</label>
                         <select name="id_matkul" id="id_matkul" required>

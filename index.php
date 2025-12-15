@@ -6,6 +6,8 @@ require_once 'config/db.php';
 
 $request_uri = strtok($_SERVER['REQUEST_URI'], '?');
 $request_uri = rtrim($request_uri, '/');
+// Remove /project prefix
+$request_uri = str_replace('/project', '', $request_uri);
 
 // Define routes with permissions
 // Format: '/url' => ['file' => 'path/ke/file.php', 'roles' => [1, 2]] 
@@ -55,14 +57,14 @@ if (array_key_exists($request_uri, $routes)) {
         // User tidak punya akses
         if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             // Belum login, redirect ke login
-            header('Location: /login');
+            header('Location: /project/login');
             exit();
         } else {
             // Sudah login tapi tidak punya permission
             http_response_code(403);
             echo "<h1>403 - Forbidden</h1>";
             echo "<p>Anda tidak memiliki akses ke halaman ini.</p>";
-            echo "<a href='/dashboard'>Kembali ke Dashboard</a>";
+            echo "<a href='/project/dashboard'>Kembali ke Dashboard</a>";
             exit();
         }
     }
@@ -78,6 +80,6 @@ if (array_key_exists($request_uri, $routes)) {
     // Route not found
     http_response_code(404);
     echo "<h1>404 - Page not found</h1>";
-    echo "<a href='/dashboard'>Kembali ke Dashboard</a>";
+    echo "<a href='/project/dashboard'>Kembali ke Dashboard</a>";
 }
 ?>

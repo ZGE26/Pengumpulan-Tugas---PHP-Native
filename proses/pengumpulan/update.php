@@ -4,13 +4,13 @@ require_once __DIR__ . '/../../config/db.php';
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 2) {
     $_SESSION['error'] = 'Akses ditolak!';
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = 'Metode request tidak valid';
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -22,7 +22,7 @@ $id_mahasiswa = $_SESSION['user_id'];
 // Validasi
 if ($id_pengumpulan == 0 || $id_tugas == 0) {
     $_SESSION['error'] = 'Data tidak valid!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -35,7 +35,7 @@ $result_check = $stmt_check->get_result();
 
 if ($result_check->num_rows == 0) {
     $_SESSION['error'] = 'Pengumpulan tidak ditemukan atau bukan milik Anda!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -44,7 +44,7 @@ $pengumpulan = $result_check->fetch_assoc();
 // Cek apakah sudah dinilai
 if ($pengumpulan['nilai'] !== null) {
     $_SESSION['error'] = 'Pengumpulan sudah dinilai, tidak bisa diedit!';
-    header('Location: /tugas/detail?id=' . $id_tugas);
+    header('Location: /project/tugas/detail?id=' . $id_tugas);
     exit();
 }
 
@@ -62,14 +62,14 @@ if (isset($_FILES['file_tugas']) && $_FILES['file_tugas']['error'] == UPLOAD_ERR
     $allowed_ext = ['pdf', 'doc', 'docx', 'zip', 'rar'];
     if (!in_array($file_ext, $allowed_ext)) {
         $_SESSION['error'] = 'Tipe file tidak diizinkan! Hanya: PDF, DOC, DOCX, ZIP, RAR';
-        header('Location: /tugas/detail?id=' . $id_tugas);
+        header('Location: /project/tugas/detail?id=' . $id_tugas);
         exit();
     }
 
     // Validasi ukuran file (max 10MB)
     if ($file_size > 10 * 1024 * 1024) {
         $_SESSION['error'] = 'Ukuran file terlalu besar! Maksimal 10MB';
-        header('Location: /tugas/detail?id=' . $id_tugas);
+        header('Location: /project/tugas/detail?id=' . $id_tugas);
         exit();
     }
 
@@ -89,7 +89,7 @@ if (isset($_FILES['file_tugas']) && $_FILES['file_tugas']['error'] == UPLOAD_ERR
     } else {
         $upload_success = false;
         $_SESSION['error'] = 'Gagal mengupload file baru!';
-        header('Location: /tugas/detail?id=' . $id_tugas);
+        header('Location: /project/tugas/detail?id=' . $id_tugas);
         exit();
     }
 }
@@ -113,5 +113,5 @@ if ($stmt_update->execute()) {
 $stmt_update->close();
 $conn->close();
 
-header('Location: /tugas/detail?id=' . $id_tugas);
+header('Location: /project/tugas/detail?id=' . $id_tugas);
 exit();

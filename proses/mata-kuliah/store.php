@@ -5,7 +5,7 @@ require_once 'create.php';
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validasi input
     if (empty($nama_matkul) || empty($kode_matkul)) {
         $_SESSION['error'] = "Semua field harus diisi!";
-        header('Location: /mata-kuliah');
+        header('Location: /project/mata-kuliah');
         exit();
     }
 
@@ -29,23 +29,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $_SESSION['error'] = "Kode mata kuliah sudah digunakan!";
-        header('Location: /mata-kuliah');
+        header('Location: /project/mata-kuliah');
         exit();
     }
 
     // Insert mata kuliah baru
     if (createMatkul($nama_matkul, $kode_matkul, $id_dosen)) {
         $_SESSION['success'] = "Mata kuliah berhasil ditambahkan!";
-        header('Location: /mata-kuliah');
+        header('Location: /project/mata-kuliah');
         exit();
     } else {
         $_SESSION['error'] = "Gagal menambahkan mata kuliah!";
-        header('Location: /mata-kuliah');
+        header('Location: /project/mata-kuliah');
         exit();
     }
 } else {
     // Jika bukan POST, redirect
-    header('Location: /mata-kuliah');
+    header('Location: /project/mata-kuliah');
     exit();
 }
 ?>

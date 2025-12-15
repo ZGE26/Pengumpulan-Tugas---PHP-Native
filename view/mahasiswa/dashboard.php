@@ -63,7 +63,7 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Mahasiswa - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 
 <body>
@@ -73,13 +73,13 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
             <h1>Dashboard Mahasiswa</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/matakuliah">Mata Kuliah</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/matakuliah">Mata Kuliah</a>
     </nav>
     
     <div class="dashboard-container">
@@ -166,7 +166,7 @@ foreach ($tugas_belum_dikumpulkan as $tugas) {
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="/tugas/detail?id=<?= $tugas['id_tugas'] ?>" class="btn-action">
+                                <a href="/project/tugas/detail?id=<?= $tugas['id_tugas'] ?>" class="btn-action">
                                     <?= $is_expired ? 'Lihat Detail' : 'Kumpulkan' ?>
                                 </a>
                             </td>

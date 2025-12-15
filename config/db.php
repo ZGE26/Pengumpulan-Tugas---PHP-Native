@@ -1,7 +1,7 @@
 <?php
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'arya');
-    define('DB_PASS', '@Padangaro26');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
     define('DB_NAME', 'academic_management');
     define('DB_PORT', 3306);
  

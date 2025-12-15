@@ -35,7 +35,7 @@ $dosen_list = getAllDosen();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Mata Kuliah - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
 </head>
 <body>
     <div class="headers">
@@ -44,14 +44,14 @@ $dosen_list = getAllDosen();
             <h1>✏️ Edit Mata Kuliah</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
     
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
     </nav>
     
     <div class="dashboard-container">
@@ -66,7 +66,7 @@ $dosen_list = getAllDosen();
 
     <h2>Edit Data Mata Kuliah</h2>
     
-    <form action="/proses/mata-kuliah/update.php" method="POST">
+    <form action="/project/proses/mata-kuliah/update.php" method="POST">
         <input type="hidden" name="id_matkul" value="<?= htmlspecialchars($matkul['id_matkul']) ?>">
         
         <table>
@@ -103,7 +103,7 @@ $dosen_list = getAllDosen();
             <tr>
                 <td colspan="2">
                     <button type="submit">💾 Update</button>
-                    <a href="/mata-kuliah" style="margin-left: 10px;">
+                    <a href="/project/mata-kuliah" style="margin-left: 10px;">
                         <button type="button">❌ Batal</button>
                     </a>
                 </td>

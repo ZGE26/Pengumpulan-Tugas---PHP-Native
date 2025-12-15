@@ -19,8 +19,8 @@ $matkul_list = getAllMatkul();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mata Kuliah - Sistem Tugas</title>
-    <link rel="stylesheet" href="/assets/css/dashboard.css">
-    <link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/project/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/project/assets/css/modal.css">
 </head>
 
 <body>
@@ -30,14 +30,14 @@ $matkul_list = getAllMatkul();
             <h1>📚 Mata Kuliah</h1>
         </div>
         <div class="logout-button">
-            <a href="/logout">Logout</a>
+            <a href="/project/logout">Logout</a>
         </div>
     </div>
 
     <nav>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/mata-kuliah">Mata Kuliah</a>
-        <a href="/tugas">Tugas</a>
+        <a href="/project/dashboard">Dashboard</a>
+        <a href="/project/mata-kuliah">Mata Kuliah</a>
+        <a href="/project/tugas">Tugas</a>
     </nav>
 
     <div class="dashboard-container">
@@ -91,14 +91,14 @@ $matkul_list = getAllMatkul();
                             <td><?php echo htmlspecialchars($matkul['nama_dosen']); ?></td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="/mata-kuliah/edit?id=<?= $matkul['id_matkul'] ?>" class="btn-edit">
+                                    <a href="/project/mata-kuliah/edit?id=<?= $matkul['id_matkul'] ?>" class="btn-edit">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                         </svg>
                                         Edit
                                     </a>
-                                    <a href="/proses/mata-kuliah/delete.php?id=<?= $matkul['id_matkul'] ?>" 
+                                    <a href="/project/proses/mata-kuliah/delete.php?id=<?= $matkul['id_matkul'] ?>" 
                                        class="btn-delete"
                                        onclick="return confirm('Yakin ingin menghapus mata kuliah ini?\n\nPeringatan: Mata kuliah yang memiliki tugas atau mahasiswa terdaftar tidak dapat dihapus.')">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -129,7 +129,7 @@ $matkul_list = getAllMatkul();
                 <h2>Tambah Mata Kuliah Baru</h2>
                 <span class="close" onclick="closeModal()">&times;</span>
             </div>
-            <form action="/proses/mata-kuliah/store.php" method="POST">
+            <form action="/project/proses/mata-kuliah/store.php" method="POST">
                 <div class="form-group">
                     <label for="nama_matkul">Nama Mata Kuliah *</label>
                     <input type="text" id="nama_matkul" name="nama_matkul" placeholder="Contoh: Pemrograman Web"

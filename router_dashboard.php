@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
@@ -14,7 +14,7 @@ if ($_SESSION['role_id'] == 1) {
 } else {
     // Role tidak valid
     session_destroy();
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 ?>

@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /project/
+
+# Jangan redirect jika mengakses file atau folder yang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect semua request ke index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

@@ -3,12 +3,12 @@ session_start();
 require_once '../../config/db.php';
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['role_id'] != 1) {
-    header('Location: /login');
+    header('Location: /project/login');
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -20,7 +20,7 @@ $id_dosen = $_SESSION['user_id'];
 
 if ($nilai < 0 || $nilai > 100) {
     $_SESSION['error'] = 'Nilai harus antara 0-100!';
-    header('Location: /tugas/nilai?id=' . $id_pengumpulan);
+    header('Location: /project/tugas/nilai?id=' . $id_pengumpulan);
     exit();
 }
 
@@ -37,7 +37,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
     $_SESSION['error'] = 'Pengumpulan tidak ditemukan!';
-    header('Location: /tugas');
+    header('Location: /project/tugas');
     exit();
 }
 
@@ -75,6 +75,6 @@ if ($update_stmt->execute()) {
     $_SESSION['error'] = 'Gagal menyimpan nilai!';
 }
 
-header('Location: /tugas/pengumpulan?id=' . $id_tugas);
+header('Location: /project/tugas/pengumpulan?id=' . $id_tugas);
 exit();
 ?>

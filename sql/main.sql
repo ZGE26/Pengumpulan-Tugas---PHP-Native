@@ -54,6 +54,7 @@ CREATE TABLE pengumpulan (
     id_tugas INT NOT NULL,
     id_mahasiswa INT NOT NULL,
     nama_file VARCHAR(255) NOT NULL,
+    link_pengumpulan VARCHAR(500),
     tanggal_kumpul DATETIME DEFAULT CURRENT_TIMESTAMP,
     nilai DECIMAL(5,2),
     catatan_dosen TEXT,
